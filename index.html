@@ -6,32 +6,40 @@
 <title>Happy Level Up Day, Khaira 🎉</title>
 
 <style>
+/* ===== BODY ===== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   text-align: center;
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  overflow: hidden;
   color: white;
+  overflow-y: auto; /* bisa scroll di HP */
 }
 
+/* ===== CONTAINER ===== */
 .container {
   position: relative;
-  top: 25vh;
+  margin: 50px auto;
+  max-width: 90%;
   z-index: 2;
 }
 
+/* ===== FONT ===== */
 h1 {
-  font-size: 40px;
+  font-size: 6vw; /* responsive untuk semua layar */
+  margin-bottom: 15px;
 }
 
 p {
-  font-size: 20px;
+  font-size: 3.5vw;
+  line-height: 1.4;
+  margin: 10px 0;
 }
 
+/* ===== BUTTON ===== */
 button {
-  padding: 15px 30px;
-  font-size: 18px;
+  padding: 12px 25px;
+  font-size: 16px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -45,15 +53,16 @@ button:hover {
   transform: scale(1.1);
 }
 
+/* ===== HIDDEN ===== */
 .hidden {
   display: none;
 }
 
-/* Balon */
+/* ===== BALON ===== */
 .balloon {
   position: absolute;
   bottom: -150px;
-  font-size: 50px;
+  font-size: 40px;
   animation: floatUp 6s linear infinite;
 }
 
@@ -62,9 +71,9 @@ button:hover {
   100% { transform: translateY(-120vh); }
 }
 
-/* Kue */
+/* ===== KUE ===== */
 .cake {
-  font-size: 80px;
+  font-size: 12vw; /* responsive */
   animation: bounce 1s infinite alternate;
 }
 
@@ -73,10 +82,29 @@ button:hover {
   to { transform: translateY(-15px); }
 }
 
+/* ===== CANVAS CONFETTI ===== */
 canvas {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
+}
+
+/* ===== MEDIA QUERIES HP KECIL ===== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 8vw;
+  }
+  p {
+    font-size: 4vw;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .cake {
+    font-size: 20vw;
+  }
 }
 </style>
 </head>
